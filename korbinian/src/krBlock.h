@@ -7,17 +7,19 @@
 
 #ifndef KRBLOCK_H_
 #define KRBLOCK_H_
-
+#include "opencv2/opencv.hpp"
 namespace korbinian {
 
 class krBlock {
 public:
 	krBlock();
-	virtual int DoStep();
+	virtual int doStep();
     int getLaptime();
 	virtual ~krBlock();
     
     int laptime;
+    std::string name;
+
 };
 
 } /* namespace krbrain */

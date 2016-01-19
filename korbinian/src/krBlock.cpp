@@ -14,7 +14,7 @@ krBlock::krBlock() {
 
 }
 
-int krBlock::DoStep() {
+int krBlock::doStep() {
 	// TODO
 	return 0;
 }

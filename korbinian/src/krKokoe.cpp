@@ -13,6 +13,7 @@ krKokoe::krKokoe(){
 	  this->img = cv::Mat::zeros(500, 500, CV_8UC3);
 	  this->clocktime=clock();
 }
+
 void krKokoe::Print(int x, const char* format, ...) {
 
 
@@ -33,13 +34,15 @@ void krKokoe::Print(int x, const char* format, ...) {
         cv::getRectSubPix(this->img, patch_sie, center, this->img);
 
     }
-    cv::putText(this->img, allocatedBuffer, cv::Point(x*20,500-5), cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0,0,200), 1, CV_AA);
-    free(allocatedBuffer);
+//    cv::putText(this->img, allocatedBuffer, cv::Point(x*10,500-5), cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0,0,200), 1, CV_AA);
+    cv::QtFont font = cv::fontQt("Sans", -1, cv::Scalar(0,200,200), cv::QT_FONT_NORMAL,cv::QT_STYLE_NORMAL, 0);
+    cv::addText(this->img, allocatedBuffer, cv::Point(x*20,500-5), font);
+     free(allocatedBuffer);
 
 
 }
 
-int krKokoe::DoStep() {
+int krKokoe::doStep() {
 	  cv::namedWindow("kokoe", CV_WINDOW_AUTOSIZE|CV_WINDOW_FREERATIO);
 	  cv::imshow("kokoe", this->img);
 

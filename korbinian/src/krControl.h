@@ -15,7 +15,7 @@ namespace korbinian {
 class krControl: public krBlock {
 public:
 	krControl();
-	int DoStep();
+	int doStep();
 	int getTotaltime();
 	virtual ~krControl();
 

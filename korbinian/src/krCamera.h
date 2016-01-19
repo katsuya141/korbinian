@@ -16,10 +16,11 @@ namespace korbinian {
 class krCamera: public krBlock {
 public:
 	krCamera(int deviceno);
-	int DoStep();
+	int doStep();
+	cv::Mat *getFrameP();
 	virtual ~krCamera();
-	cv::Mat frame;
 private:
+	cv::Mat frame;
 	cv::VideoCapture cap;
 };
 

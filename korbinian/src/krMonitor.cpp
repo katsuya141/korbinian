@@ -23,7 +23,7 @@ void krMonitor::Print(int x, int y, const char* format, ...) {
     free(allocatedBuffer);
 }
 
-int krMonitor::DoStep() {
+int krMonitor::doStep() {
 	  cv::namedWindow("drawing", CV_WINDOW_AUTOSIZE|CV_WINDOW_FREERATIO);
 	  cv::imshow("drawing", this->img);
 

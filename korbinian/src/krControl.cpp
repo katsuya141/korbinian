@@ -15,10 +15,12 @@ krControl::krControl() {
 
 }
 
-int krControl::DoStep() {
+int krControl::doStep() {
 	int key = cv::waitKey(1);
-	//printf("%d\n",key);
-    if(key == 1048689)//qボタンが押されたとき
+	if(key>0)
+		printf("%d\n",key);
+	//    if(key == 1048689)//qボタンが押されたとき
+	if(key == 113)//qボタンが押されたとき
     {
         return false;//シミュレーションループから抜ける．
     }

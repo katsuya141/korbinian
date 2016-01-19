@@ -17,7 +17,7 @@ class krKokoe: public krBlock {
 public:
 	krKokoe();
 	void Print(int y, const char* format, ...);
-	int DoStep();
+	int doStep();
 	virtual ~krKokoe();
 
 	cv::Mat img;

@@ -16,11 +16,15 @@ namespace korbinian {
 
 class krDetector: public krBlock {
 public:
-	krDetector(char* filename);
-	int DoStep(cv::Mat *img_p);
+	krDetector(cv::Mat *SourceFrame_p, cv::String filename);
+	int doStep();
+	cv::Mat *drawResult(cv::Mat *SourceFrame_p);
+	std::vector<cv::Rect> *getDetects();
 	virtual ~krDetector();
 
-	cv::CascadeClassifier cascade;
+	cv::CascadeClassifier cascade;	// 検出器
+	std::vector<cv::Rect> detects;	//検出結果
+	cv::Mat *SourceFrame_p;
 };
 
 } /* namespace korbinian */

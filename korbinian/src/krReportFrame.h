@@ -15,9 +15,10 @@ namespace korbinian {
 
 class krReportFrame: public krBlock {
 public:
-	krReportFrame();
-	int DoStep(cv::Mat *frame_p);
+	krReportFrame(char* windowName);
+	int doStep(cv::Mat *frame_p);
 	virtual ~krReportFrame();
+
 private:
 };
 

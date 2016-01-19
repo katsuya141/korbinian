@@ -17,7 +17,7 @@ class krMonitor: public krBlock {
 public:
 	krMonitor();
 	void Print(int x,int y, const char* format, ...);
-	int DoStep();
+	int doStep();
 	virtual ~krMonitor();
 
 	cv::Mat img;

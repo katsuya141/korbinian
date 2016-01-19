@@ -55,7 +55,7 @@ krCamera::krCamera(int deviceno) {
      */
 }
 
-int krCamera::DoStep() {
+int krCamera::doStep() {
     // 処理時間計測基準値
     clock_t clock_base=clock();
 
@@ -64,6 +64,11 @@ int krCamera::DoStep() {
     // 処理時間計測
     this->laptime=clock()-clock_base;
     return 0;
+
+}
+cv::Mat *krCamera::getFrameP() {
+    // 処理時間計測基準値
+        return &(this->frame);
 
 }
 
